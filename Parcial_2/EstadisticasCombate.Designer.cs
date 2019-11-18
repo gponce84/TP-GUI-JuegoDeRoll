@@ -154,6 +154,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picboxPB);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EstadisticasCombate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Estadisticas del combate";

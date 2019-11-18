@@ -412,4 +412,28 @@
   <data name="wizard_map4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wizard_map41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="movimiento21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\movimiento21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="movimientoDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\movimientoDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="movimientoLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\movimientoLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="movimientoRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\movimientoRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="movimientoUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\movimientoUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crossed_swords_and_shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crossed-swords-and-shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Xv_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Xv.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Xv_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Xv.2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

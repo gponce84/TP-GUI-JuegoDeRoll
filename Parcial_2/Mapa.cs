@@ -19,12 +19,14 @@ namespace Parcial_2
         Image piso = Properties.Resources.piso2;
         Label label = new Label();
         Random rnd = new Random();
+        Casilla csl_j = new Casilla();
 
         public Mapa(int clase, string nombre)
         {
             InitializeComponent();
             label.Text = "Nombre:  " + nombre;
             player = new Jugador(clase);
+            player.Nombre = nombre;
         }
 
         private void Mapa_Load(object sender, EventArgs e)
@@ -66,7 +68,7 @@ namespace Parcial_2
 
         private void Mapa_KeyUp(object sender, KeyEventArgs e)
         {
-            Casilla csl_j = new Casilla();
+            
             foreach (Control csl in Controls)
             {
                 if (typeof(Casilla) == csl.GetType() && player.Img_Mapa.Contains(((Casilla)csl).Image))
@@ -83,7 +85,7 @@ namespace Parcial_2
                     {
                         ((Casilla)csl).Image = player.Img_Mapa.ElementAt(2);
                         //csl.BackgroundImage = csl_j.BackgroundImage;
-                        csl_j.Image = Properties.Resources.movimiento2;
+                        csl_j.Image = Properties.Resources.movimientoLeft;
                         csl.BackgroundImageLayout = ImageLayout.Stretch;
                     }
                 }
@@ -98,7 +100,7 @@ namespace Parcial_2
                     {
                         ((Casilla)csl).Image = player.Img_Mapa.ElementAt(1);
                         //csl.BackgroundImage = csl_j.BackgroundImage;
-                        csl_j.Image = Properties.Resources.movimiento2;
+                        csl_j.Image = Properties.Resources.movimientoRight;
                         csl.BackgroundImageLayout = ImageLayout.Stretch;
                     }
                 }
@@ -113,7 +115,7 @@ namespace Parcial_2
                     {
                         ((Casilla)csl).Image = player.Img_Mapa.ElementAt(3);
                         //csl.BackgroundImage = csl_j.BackgroundImage;
-                        csl_j.Image = Properties.Resources.movimiento2;
+                        csl_j.Image = Properties.Resources.movimientoUp;
                         csl.BackgroundImageLayout = ImageLayout.Stretch;
                     }
                 }
@@ -128,7 +130,7 @@ namespace Parcial_2
                     {
                         ((Casilla)csl).Image = player.Img_Mapa.ElementAt(0);
                         //csl.BackgroundImage = csl_j.BackgroundImage;
-                        csl_j.Image = Properties.Resources.movimiento2;
+                        csl_j.Image = Properties.Resources.movimientoDown;
                         csl.BackgroundImageLayout = ImageLayout.Stretch;
                     }
                 }
@@ -139,26 +141,28 @@ namespace Parcial_2
 
         void Pelea()
         {
-            
+            int cantCombates = 0;
+
             this.Enabled = false;
             int r = rnd.Next(1, 100);
             if (r <= 20)
             {
-                Combate cmbt = new Combate(ref player);
+                Combate cmbt = new Combate(ref player, csl_j);
+                
                 //EstadisticasCombate cmbt = new EstadisticasCombate(ref player);
                 this.AddOwnedForm(cmbt);
                 if (this.OwnedForms != null)
                 {
                     cmbt.Show();
-                    
-                    
+                    cantCombates++;
                 }
                     
             }
         }
-
+   
+      }
 
     }//
-}
+
 
 

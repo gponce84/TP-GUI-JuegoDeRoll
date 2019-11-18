@@ -29,6 +29,7 @@ namespace Parcial_2
         private int exp = 100;
         private int exp_Actual = 0;
         private int ctdor = 0;
+        private String nombre;
 
         public List<Image> Img_Mapa
         {
@@ -233,6 +234,19 @@ namespace Parcial_2
             set
             {
                 pocionesMana = value;
+            }
+        }
+
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+
+            set
+            {
+                nombre = value;
             }
         }
 

@@ -26,10 +26,10 @@ namespace Parcial_2
         int accionar_enemigo;
         Random rmd = new Random();
         Point[] posicion_original = new Point[2];
-
+        PictureBox cls_j;
         EstadisticasCombate ec;
 
-        public Combate(ref Jugador player)
+        public Combate(ref Jugador player, PictureBox csl_j)
         {
             Location = new Point(400, 0);
             InitializeComponent();
@@ -42,7 +42,8 @@ namespace Parcial_2
             ec = new EstadisticasCombate(ref player_Cmbt, ref enemy);
             ec.Location = new Point(this.Size.Width+this.Location.X+20, this.Location.Y);
             ec.actualizar(player_Cmbt.Vida_Real,player_Cmbt.Mana_Real,enemy.Vida_Real,0,0,0);
-        
+            this.cls_j = csl_j;  //recibe la casilla cuando se crea el combate
+
         
             this.AddOwnedForm(ec);
             if (this.OwnedForms != null)
@@ -93,13 +94,30 @@ namespace Parcial_2
                 }
                 else
                 {
-                    if (enemy.Vida_Real > 0)
+                    if (enemy.Vida_Real > 0 )
                     {
+
+                        
                         switch (accionar_enemigo)
                         {
                             case 1:
                                 animacionCombate(2);
                                 inst_ataque();
+
+                                if (player_Cmbt.Vida_Real <= 0)
+                                {
+                                                             
+
+                                    MessageBox.Show("Perdiste Rata inmunda","GAME OVER!!");
+                                    Owner.Enabled = true;
+                                    Mapa mp = (Mapa)this.Owner;
+                                    this.Close();
+
+                                    mp.BringToFront();
+                                    Application.Exit();
+
+                                }
+
                                 break;
                             case 2:
                                 if (defensa_jug == false)
@@ -137,17 +155,14 @@ namespace Parcial_2
                             default:
                                 accion = true;
                                 break;
-                        }
-
+                            }
                     }
                     else
                     {
-                        
-
                         accion = false;
                         turno_player = true;
-
                         //cuando el enemigo muere sube la experiencia
+                        MessageBox.Show("Esta vez has Ganado!!",player_Cmbt.Nombre);
                         ec.Close();
                         subirExp();
                         ganaPocion();
@@ -155,6 +170,7 @@ namespace Parcial_2
                         Mapa mp = (Mapa)this.Owner;
                         this.Close();
                         mp.BringToFront();
+                        cls_j.Image = Properties.Resources.crossed_swords_and_shield; 
 
                     }
                 }
@@ -486,10 +502,20 @@ namespace Parcial_2
 
         private void btn_Escapar_Click(object sender, EventArgs e)
         {
-            Owner.Enabled = true;
-            Mapa mp = (Mapa)this.Owner;
-            this.Close();
-            mp.BringToFront();
+            DialogResult r= MessageBox.Show("Huyes Cobarde?","",MessageBoxButtons.YesNo);
+
+            if(r ==DialogResult.Yes )
+            {
+                Owner.Enabled = true;
+                Mapa mp = (Mapa)this.Owner;
+                this.Close();
+                mp.BringToFront();
+                cls_j.Image = Properties.Resources.Xv_2;
+
+            }
+           
+            
+            
         }
 
         private void calcularProb()

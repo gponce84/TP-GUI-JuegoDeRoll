@@ -21,7 +21,7 @@ namespace Parcial_2
 
         private void Intro_Load(object sender, EventArgs e)
         {
-            button2.Visible = true;
+            button2.Visible = false;
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -39,16 +39,22 @@ namespace Parcial_2
                 date_v = true;
             else
                 date_v = false;
-            Validacion();
+           // Validacion();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (this.textBox1.Text.Length > 2)
+            {
                 text_v = true;
+
+            }
             else
+            {
                 text_v = false;
-            Validacion();
+            }
+          
+           Validacion();
         }
 
         private void Validacion()
@@ -56,7 +62,7 @@ namespace Parcial_2
             if (text_v == true && date_v == true)
                 button2.Visible = true;
             else
-                button2.Visible = false;
+                button2.Visible = true;
         }
     }
 }

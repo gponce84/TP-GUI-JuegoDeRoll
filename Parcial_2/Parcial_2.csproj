@@ -451,6 +451,30 @@
   <ItemGroup>
     <None Include="Resources\wizard_map41.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movimientoRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movimientoDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movimientoUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movimientoLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xv.1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xv.2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\batallaEscudo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crossed-swords-and-shield.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

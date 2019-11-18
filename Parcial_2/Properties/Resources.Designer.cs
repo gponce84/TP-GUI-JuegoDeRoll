@@ -253,6 +253,16 @@ namespace Parcial_2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap crossed_swords_and_shield {
+            get {
+                object obj = ResourceManager.GetObject("crossed_swords_and_shield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Enemy1_ataque1 {
             get {
                 object obj = ResourceManager.GetObject("Enemy1_ataque1", resourceCulture);
@@ -703,6 +713,56 @@ namespace Parcial_2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap movimiento21 {
+            get {
+                object obj = ResourceManager.GetObject("movimiento21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap movimientoDown {
+            get {
+                object obj = ResourceManager.GetObject("movimientoDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap movimientoLeft {
+            get {
+                object obj = ResourceManager.GetObject("movimientoLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap movimientoRight {
+            get {
+                object obj = ResourceManager.GetObject("movimientoRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap movimientoUp {
+            get {
+                object obj = ResourceManager.GetObject("movimientoUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pasto {
             get {
                 object obj = ResourceManager.GetObject("pasto", resourceCulture);
@@ -1036,6 +1096,26 @@ namespace Parcial_2.Properties {
         internal static System.Drawing.Bitmap wizard_map4 {
             get {
                 object obj = ResourceManager.GetObject("wizard_map4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xv_1 {
+            get {
+                object obj = ResourceManager.GetObject("Xv_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xv_2 {
+            get {
+                object obj = ResourceManager.GetObject("Xv_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
