@@ -170,7 +170,8 @@ namespace Parcial_2
                         Mapa mp = (Mapa)this.Owner;
                         this.Close();
                         mp.BringToFront();
-                        cls_j.Image = Properties.Resources.crossed_swords_and_shield; 
+                        cls_j.BackgroundImage = Properties.Resources.crossed_swords_and_shield;
+                        cls_j.BackgroundImageLayout = ImageLayout.Center;
 
                     }
                 }
@@ -510,8 +511,8 @@ namespace Parcial_2
                 Mapa mp = (Mapa)this.Owner;
                 this.Close();
                 mp.BringToFront();
-                cls_j.Image = Properties.Resources.Xv_2;
-
+                cls_j.BackgroundImage = Properties.Resources.Xv_2;
+                cls_j.BackgroundImageLayout = ImageLayout.Center;
             }
            
             

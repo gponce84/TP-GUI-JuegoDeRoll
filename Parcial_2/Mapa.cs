@@ -19,7 +19,9 @@ namespace Parcial_2
         Image piso = Properties.Resources.piso2;
         Label label = new Label();
         Random rnd = new Random();
-        Casilla csl_j = new Casilla();
+        Casilla csl_j = new Casilla();//
+        List<Casilla> listCasillas = new List<Casilla>();
+        int cantCombates = 0;
 
         public Mapa(int clase, string nombre)
         {
@@ -55,10 +57,21 @@ namespace Parcial_2
                     csl.BackgroundImageLayout = ImageLayout.Stretch;
 
                 }
-
+                listCasillas.Add(csl);
                 this.Controls.Add(csl);
                 this.Controls.Add(label);
             }
+        }
+
+        public void pintarPuertaSalida()
+        {
+            int salida = rnd.Next(0, 99);
+
+            Casilla puerta = listCasillas[salida];
+            puerta.BackgroundImage = Properties.Resources.Xv_1;
+            puerta.BackgroundImageLayout = ImageLayout.Center;
+            puerta.Tag = "puerta";
+
         }
 
         private void Mapa_FormClosing_1(object sender, FormClosingEventArgs e)
@@ -68,13 +81,35 @@ namespace Parcial_2
 
         private void Mapa_KeyUp(object sender, KeyEventArgs e)
         {
-            
+           
+
+
             foreach (Control csl in Controls)
             {
+                Casilla st= null;
+
                 if (typeof(Casilla) == csl.GetType() && player.Img_Mapa.Contains(((Casilla)csl).Image))
                 {
                     csl_j = (Casilla)csl;// Con esto sabemos en que control esta el personaje
                 }
+
+
+                if(typeof(Casilla) == csl.GetType())
+                {
+                     st = (Casilla)csl;
+                }
+          
+
+
+                if(st != null && st.Tag != null && st.Tag.Equals("puerta") )
+                {
+                    if (st.Location.X == csl_j.Location.X - anchobtn &&
+                       st.Location.Y == csl_j.Location.Y)
+                    {
+                         MessageBox.Show("puerta salida");
+                    }
+                }
+
             }
             if (e.KeyCode == Keys.Left && csl_j.Location.X != 0)
             {
@@ -83,13 +118,32 @@ namespace Parcial_2
                     if (csl.Location.X == csl_j.Location.X - anchobtn &&
                         csl.Location.Y == csl_j.Location.Y)
                     {
+
+                        if (((Casilla)csl).Tag != null && ((Casilla)csl).Tag.Equals("puerta"))
+                        {
+                            
+                            MessageBox.Show("puerta salida");
+                            Application.Exit();
+
+                        }
+
+
                         ((Casilla)csl).Image = player.Img_Mapa.ElementAt(2);
                         //csl.BackgroundImage = csl_j.BackgroundImage;
-                        csl_j.Image = Properties.Resources.movimientoLeft;
-                        csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        if (csl_j.BackgroundImage == null)
+                        {
+                            csl_j.Image = Properties.Resources.movimientoLeft;
+                        }
+                        else
+                        {
+                            csl_j.Image = null;
+                        }
+                        
+                        //csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        Pelea((Casilla)csl);
                     }
                 }
-                Pelea();
+                
             }
             else if (e.KeyCode == Keys.Right && csl_j.Location.X < anchobtn * 9)
             {
@@ -98,13 +152,31 @@ namespace Parcial_2
                     if (csl.Location.X == csl_j.Location.X + anchobtn &&
                         csl.Location.Y == csl_j.Location.Y)
                     {
+                        if (((Casilla)csl).Tag != null && ((Casilla)csl).Tag.Equals("puerta"))
+                        {
+
+                            MessageBox.Show("puerta salida");
+                            Application.Exit();
+
+                        }
+
+
                         ((Casilla)csl).Image = player.Img_Mapa.ElementAt(1);
                         //csl.BackgroundImage = csl_j.BackgroundImage;
-                        csl_j.Image = Properties.Resources.movimientoRight;
-                        csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        if (csl_j.BackgroundImage == null)
+                        {
+                            csl_j.Image = Properties.Resources.movimientoRight;
+                        }
+                        else
+                        {
+                            csl_j.Image = null;
+                        }
+
+                       //csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        Pelea((Casilla)csl);
                     }
                 }
-                Pelea();
+              //  Pelea();
             }
             else if (e.KeyCode == Keys.Up && csl_j.Location.Y != 0)
             {
@@ -113,13 +185,33 @@ namespace Parcial_2
                     if (csl.Location.X == csl_j.Location.X &&
                         csl.Location.Y == csl_j.Location.Y - altobtn)
                     {
+
+                        if (((Casilla)csl).Tag != null && ((Casilla)csl).Tag.Equals("puerta"))
+                        {
+
+                            MessageBox.Show("puerta salida");
+                            Application.Exit();
+
+                        }
+
+
                         ((Casilla)csl).Image = player.Img_Mapa.ElementAt(3);
                         //csl.BackgroundImage = csl_j.BackgroundImage;
-                        csl_j.Image = Properties.Resources.movimientoUp;
-                        csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        if (csl_j.BackgroundImage == null)
+                        {
+                            csl_j.Image = Properties.Resources.movimientoUp;
+                        }
+                        else
+                        {
+                            csl_j.Image = null;
+                        }
+
+                       // csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        Pelea((Casilla)csl);
+                  
                     }
                 }
-                Pelea();
+                //Pelea();
             }
             else if (e.KeyCode == Keys.Down && csl_j.Location.Y < altobtn * 9)
             {
@@ -128,26 +220,48 @@ namespace Parcial_2
                     if (csl.Location.X == csl_j.Location.X &&
                         csl.Location.Y == csl_j.Location.Y + altobtn)
                     {
+
+                        if (((Casilla)csl).Tag != null && ((Casilla)csl).Tag.Equals("puerta"))
+                        {
+
+                            MessageBox.Show("puerta salida");
+                            Application.Exit();
+
+
+                        }
+
+
                         ((Casilla)csl).Image = player.Img_Mapa.ElementAt(0);
                         //csl.BackgroundImage = csl_j.BackgroundImage;
-                        csl_j.Image = Properties.Resources.movimientoDown;
-                        csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        if (csl_j.BackgroundImage == null)
+                        {
+                            csl_j.Image = Properties.Resources.movimientoDown;
+                        }
+                        else
+                        {
+                            csl_j.Image = null;
+                            
+                        }
+
+                        //csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        Pelea((Casilla)csl);
+
                     }
                 }
-                Pelea();
+                //Pelea();
             }
 
         }
 
-        void Pelea()
+        void Pelea(Casilla csl)
         {
-            int cantCombates = 0;
+            
 
             this.Enabled = false;
             int r = rnd.Next(1, 100);
             if (r <= 20)
             {
-                Combate cmbt = new Combate(ref player, csl_j);
+                Combate cmbt = new Combate(ref player, csl);
                 
                 //EstadisticasCombate cmbt = new EstadisticasCombate(ref player);
                 this.AddOwnedForm(cmbt);
@@ -155,6 +269,11 @@ namespace Parcial_2
                 {
                     cmbt.Show();
                     cantCombates++;
+                    if(cantCombates == 1)
+                    {
+                        pintarPuertaSalida();
+
+                    }
                 }
                     
             }
