@@ -28,7 +28,7 @@ namespace Parcial_2
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Mapa frm = new Mapa(img, nombre);
+            Mapa frm = new Mapa(img, nombre,1,0 );
             frm.Show();
         }
 

@@ -161,7 +161,7 @@ namespace Parcial_2
                     {
                         accion = false;
                         turno_player = true;
-                        //cuando el enemigo muere sube la experiencia
+                        //cuando el enemigo muere sube la experiencias
                         MessageBox.Show("Esta vez has Ganado!!",player_Cmbt.Nombre);
                         ec.Close();
                         subirExp();
@@ -170,7 +170,7 @@ namespace Parcial_2
                         Mapa mp = (Mapa)this.Owner;
                         this.Close();
                         mp.BringToFront();
-                        cls_j.BackgroundImage = Properties.Resources.Espada4;
+                        cls_j.BackgroundImage = Properties.Resources.crossed_swords_and_shield;
                         cls_j.BackgroundImageLayout = ImageLayout.Center;
 
                     }
@@ -186,7 +186,6 @@ namespace Parcial_2
                 subirNivel();
 
             }
-
         }
         private void subirNivel()
         {
@@ -513,10 +512,7 @@ namespace Parcial_2
                 mp.BringToFront();
                 cls_j.BackgroundImage = Properties.Resources.Xv_2;
                 cls_j.BackgroundImageLayout = ImageLayout.Center;
-            }
-           
-            
-            
+            }               
         }
 
         private void calcularProb()

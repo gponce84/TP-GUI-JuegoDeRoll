@@ -176,7 +176,7 @@ namespace Parcial_2
                             //csl.BackgroundImage = csl_j.BackgroundImage;
                             if (csl_j.BackgroundImage == null)
                             {
-                                csl_j.Image = Properties.Resources.huelasRight;
+                                csl_j.Image = Properties.Resources.movimientoLeft;
                             }
                             else
                             {
@@ -201,33 +201,30 @@ namespace Parcial_2
                     {
                         if (((Casilla)csl).Tag != null && ((Casilla)csl).Tag.Equals("puerta"))
                         {
-
-                            //MessageBox.Show("puerta salida");
-                           // Application.Exit();
+                          
                             entroPuerta();
                         }
                         else
                         {
 
                             ((Casilla)csl).Image = player.Img_Mapa.ElementAt(1);
-                            //csl.BackgroundImage = csl_j.BackgroundImage;
+
                             if (csl_j.BackgroundImage == null)
                             {
-                                csl_j.Image = Properties.Resources.huelasRight;
+                                csl_j.Image = Properties.Resources.movimientoRight;
                             }
                             else
                             {
                                 csl_j.Image = null;
                             }
 
-                            //csl.BackgroundImageLayout = ImageLayout.Stretch;
                             Pelea((Casilla)csl);
                         }
 
 
                     }
                 }
-              //  Pelea();
+
             }
             else if (e.KeyCode == Keys.Up && csl_j.Location.Y != 0)
             {
@@ -239,34 +236,25 @@ namespace Parcial_2
 
                         if (((Casilla)csl).Tag != null && ((Casilla)csl).Tag.Equals("puerta"))
                         {
-
-                           // MessageBox.Show("puerta salida");
-                            //Application.Exit();
                             entroPuerta();
                         }
                         else
                         {
                             ((Casilla)csl).Image = player.Img_Mapa.ElementAt(3);
-                            //csl.BackgroundImage = csl_j.BackgroundImage;
+
                             if (csl_j.BackgroundImage == null)
                             {
-                                csl_j.Image = Properties.Resources.huelasUp;
+                                csl_j.Image = Properties.Resources.movimientoUp;
                             }
                             else
                             {
                                 csl_j.Image = null;
                             }
-
-                            // csl.BackgroundImageLayout = ImageLayout.Stretch;
                             Pelea((Casilla)csl);
                         }
-
-
-                        
-                  
                     }
                 }
-                //Pelea();
+               
             }
             else if (e.KeyCode == Keys.Down && csl_j.Location.Y < altobtn * 9)
             {
@@ -290,7 +278,7 @@ namespace Parcial_2
                             //csl.BackgroundImage = csl_j.BackgroundImage;
                             if (csl_j.BackgroundImage == null)
                             {
-                                csl_j.Image = Properties.Resources.huelasDown;
+                                csl_j.Image = Properties.Resources.movimientoDown;
                             }
                             else
                             {
@@ -301,10 +289,6 @@ namespace Parcial_2
                             //csl.BackgroundImageLayout = ImageLayout.Stretch;
                             Pelea((Casilla)csl);
                         }
-
-
-                       
-
                     }
                 }
                 //Pelea();

@@ -783,9 +783,9 @@ namespace Parcial_2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap huelasRight {
+        internal static System.Drawing.Bitmap huelasRigth {
             get {
-                object obj = ResourceManager.GetObject("huelasRight", resourceCulture);
+                object obj = ResourceManager.GetObject("huelasRigth", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
