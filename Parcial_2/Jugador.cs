@@ -30,7 +30,6 @@ namespace Parcial_2
         private int exp_Actual = 0;
         private int ctdor = 0;
         private String nombre;
-        public int clase;
 
         public List<Image> Img_Mapa
         {
@@ -263,10 +262,8 @@ namespace Parcial_2
             return img;
         }
 
-        public Jugador(int clase, int exp)
+        public Jugador(int clase)
         {
-            this.clase = clase;
-            this.Experiencia = exp;
             switch (clase)
             {
                 case 1:

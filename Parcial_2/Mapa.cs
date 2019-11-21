@@ -22,52 +22,20 @@ namespace Parcial_2
         Casilla csl_j = new Casilla();//
         List<Casilla> listCasillas = new List<Casilla>();
         int cantCombates = 0;
-        int numeroMapa;
 
-        public Mapa(int clase, string nombre, int mapa, int exp)
+        public Mapa(int clase, string nombre)
         {
             InitializeComponent();
             label.Text = "Nombre:  " + nombre;
-            player = new Jugador(clase, exp);
+            player = new Jugador(clase);
             player.Nombre = nombre;
-            numeroMapa = mapa;
         }
 
         private void Mapa_Load(object sender, EventArgs e)
         {
             GenerateMap();
-            switch (numeroMapa)
-            {
-                case 1:
-                    BackgroundImage = Properties.Resources.Mapa1;
-                    BackgroundImageLayout = ImageLayout.Tile;
-                    break;
-                case 2:
-                    BackgroundImage = Properties.Resources.Snowy;
-                    BackgroundImageLayout = ImageLayout.Stretch;
-                    break;
-                case 3:
-                    BackgroundImage = Properties.Resources.dungeon;
-                    BackgroundImageLayout = ImageLayout.Stretch;
-                    break;
-                case 4:
-                    DialogResult r = MessageBox.Show("HAS GANANADO EL JUEGO", "", MessageBoxButtons.OK);
-
-                    if (r == DialogResult.OK)
-                    {
-                        Application.Exit();
-
-                    }
-                    break;
-
-
-            }
-
-
-
-            //BackgroundImage = Properties.Resources.Mapa1;
-            //BackgroundImage = Properties.Resources.Snowy;
-            //BackgroundImageLayout = ImageLayout.Tile;
+            BackgroundImage = Properties.Resources.Mapa1;
+            BackgroundImageLayout = ImageLayout.Tile;
             label.TextAlign = ContentAlignment.BottomLeft;
             label.Font = new Font("Arial Black", 12);
             label.Location = new Point(0, altobtn * 10);
@@ -100,20 +68,10 @@ namespace Parcial_2
             int salida = rnd.Next(0, 99);
 
             Casilla puerta = listCasillas[salida];
-            puerta.BackgroundImage = Properties.Resources.gate;
-            puerta.BackgroundImageLayout = ImageLayout.Zoom;
+            puerta.BackgroundImage = Properties.Resources.Xv_1;
+            puerta.BackgroundImageLayout = ImageLayout.Center;
             puerta.Tag = "puerta";
 
-
-        }
-
-        public void entroPuerta()
-        {
-            
-            this.Hide();
-            
-            Mapa frm = new Mapa(player.clase, player.Nombre, numeroMapa+1, player.Experiencia);
-            frm.Show();
         }
 
         private void Mapa_FormClosing_1(object sender, FormClosingEventArgs e)
@@ -148,8 +106,7 @@ namespace Parcial_2
                     if (st.Location.X == csl_j.Location.X - anchobtn &&
                        st.Location.Y == csl_j.Location.Y)
                     {
-                        entroPuerta();
-                         //MessageBox.Show("puerta salida");
+                         MessageBox.Show("puerta salida");
                     }
                 }
 
@@ -164,30 +121,26 @@ namespace Parcial_2
 
                         if (((Casilla)csl).Tag != null && ((Casilla)csl).Tag.Equals("puerta"))
                         {
-                            entroPuerta();
-                            //MessageBox.Show("puerta salida");
-                            // Application.Exit();
+                            
+                            MessageBox.Show("puerta salida");
+                            Application.Exit();
 
+                        }
+
+
+                        ((Casilla)csl).Image = player.Img_Mapa.ElementAt(2);
+                        //csl.BackgroundImage = csl_j.BackgroundImage;
+                        if (csl_j.BackgroundImage == null)
+                        {
+                            csl_j.Image = Properties.Resources.movimientoLeft;
                         }
                         else
                         {
-
-                            ((Casilla)csl).Image = player.Img_Mapa.ElementAt(2);
-                            //csl.BackgroundImage = csl_j.BackgroundImage;
-                            if (csl_j.BackgroundImage == null)
-                            {
-                                csl_j.Image = Properties.Resources.movimientoLeft;
-                            }
-                            else
-                            {
-                                csl_j.Image = null;
-                            }
-
-                            //csl.BackgroundImageLayout = ImageLayout.Stretch;
-                            Pelea((Casilla)csl);
+                            csl_j.Image = null;
                         }
-
-
+                        
+                        //csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        Pelea((Casilla)csl);
                     }
                 }
                 
@@ -202,29 +155,25 @@ namespace Parcial_2
                         if (((Casilla)csl).Tag != null && ((Casilla)csl).Tag.Equals("puerta"))
                         {
 
-                            //MessageBox.Show("puerta salida");
-                           // Application.Exit();
-                            entroPuerta();
+                            MessageBox.Show("puerta salida");
+                            Application.Exit();
+
+                        }
+
+
+                        ((Casilla)csl).Image = player.Img_Mapa.ElementAt(1);
+                        //csl.BackgroundImage = csl_j.BackgroundImage;
+                        if (csl_j.BackgroundImage == null)
+                        {
+                            csl_j.Image = Properties.Resources.movimientoRight;
                         }
                         else
                         {
-
-                            ((Casilla)csl).Image = player.Img_Mapa.ElementAt(1);
-                            //csl.BackgroundImage = csl_j.BackgroundImage;
-                            if (csl_j.BackgroundImage == null)
-                            {
-                                csl_j.Image = Properties.Resources.movimientoRight;
-                            }
-                            else
-                            {
-                                csl_j.Image = null;
-                            }
-
-                            //csl.BackgroundImageLayout = ImageLayout.Stretch;
-                            Pelea((Casilla)csl);
+                            csl_j.Image = null;
                         }
 
-
+                       //csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        Pelea((Casilla)csl);
                     }
                 }
               //  Pelea();
@@ -240,29 +189,25 @@ namespace Parcial_2
                         if (((Casilla)csl).Tag != null && ((Casilla)csl).Tag.Equals("puerta"))
                         {
 
-                           // MessageBox.Show("puerta salida");
-                            //Application.Exit();
-                            entroPuerta();
+                            MessageBox.Show("puerta salida");
+                            Application.Exit();
+
+                        }
+
+
+                        ((Casilla)csl).Image = player.Img_Mapa.ElementAt(3);
+                        //csl.BackgroundImage = csl_j.BackgroundImage;
+                        if (csl_j.BackgroundImage == null)
+                        {
+                            csl_j.Image = Properties.Resources.movimientoUp;
                         }
                         else
                         {
-                            ((Casilla)csl).Image = player.Img_Mapa.ElementAt(3);
-                            //csl.BackgroundImage = csl_j.BackgroundImage;
-                            if (csl_j.BackgroundImage == null)
-                            {
-                                csl_j.Image = Properties.Resources.movimientoUp;
-                            }
-                            else
-                            {
-                                csl_j.Image = null;
-                            }
-
-                            // csl.BackgroundImageLayout = ImageLayout.Stretch;
-                            Pelea((Casilla)csl);
+                            csl_j.Image = null;
                         }
 
-
-                        
+                       // csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        Pelea((Casilla)csl);
                   
                     }
                 }
@@ -279,31 +224,27 @@ namespace Parcial_2
                         if (((Casilla)csl).Tag != null && ((Casilla)csl).Tag.Equals("puerta"))
                         {
 
-                            //MessageBox.Show("puerta salida");
-                            //Application.Exit();
-                            entroPuerta();
+                            MessageBox.Show("puerta salida");
+                            Application.Exit();
 
+
+                        }
+
+
+                        ((Casilla)csl).Image = player.Img_Mapa.ElementAt(0);
+                        //csl.BackgroundImage = csl_j.BackgroundImage;
+                        if (csl_j.BackgroundImage == null)
+                        {
+                            csl_j.Image = Properties.Resources.movimientoDown;
                         }
                         else
                         {
-                            ((Casilla)csl).Image = player.Img_Mapa.ElementAt(0);
-                            //csl.BackgroundImage = csl_j.BackgroundImage;
-                            if (csl_j.BackgroundImage == null)
-                            {
-                                csl_j.Image = Properties.Resources.movimientoDown;
-                            }
-                            else
-                            {
-                                csl_j.Image = null;
-
-                            }
-
-                            //csl.BackgroundImageLayout = ImageLayout.Stretch;
-                            Pelea((Casilla)csl);
+                            csl_j.Image = null;
+                            
                         }
 
-
-                       
+                        //csl.BackgroundImageLayout = ImageLayout.Stretch;
+                        Pelea((Casilla)csl);
 
                     }
                 }
@@ -328,7 +269,7 @@ namespace Parcial_2
                 {
                     cmbt.Show();
                     cantCombates++;
-                    if(cantCombates == 5)
+                    if(cantCombates == 1)
                     {
                         pintarPuertaSalida();
 
