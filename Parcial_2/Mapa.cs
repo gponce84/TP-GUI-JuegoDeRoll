@@ -176,7 +176,7 @@ namespace Parcial_2
                             //csl.BackgroundImage = csl_j.BackgroundImage;
                             if (csl_j.BackgroundImage == null)
                             {
-                                csl_j.Image = Properties.Resources.movimientoLeft;
+                                csl_j.Image = Properties.Resources.huelasLeft;
                             }
                             else
                             {
@@ -211,7 +211,7 @@ namespace Parcial_2
 
                             if (csl_j.BackgroundImage == null)
                             {
-                                csl_j.Image = Properties.Resources.movimientoRight;
+                                csl_j.Image = Properties.Resources.huelasRigth;
                             }
                             else
                             {
@@ -244,7 +244,7 @@ namespace Parcial_2
 
                             if (csl_j.BackgroundImage == null)
                             {
-                                csl_j.Image = Properties.Resources.movimientoUp;
+                                csl_j.Image = Properties.Resources.huelasUp;
                             }
                             else
                             {
@@ -278,7 +278,7 @@ namespace Parcial_2
                             //csl.BackgroundImage = csl_j.BackgroundImage;
                             if (csl_j.BackgroundImage == null)
                             {
-                                csl_j.Image = Properties.Resources.movimientoDown;
+                                csl_j.Image = Properties.Resources.huelasDown;
                             }
                             else
                             {
