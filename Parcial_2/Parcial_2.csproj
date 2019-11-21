@@ -485,27 +485,6 @@
     <None Include="Resources\dungeon.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\huelasLeft.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\huelasRigth.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\huelasUp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\huelasDown.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Espada10.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Espada11.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Espada3.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Espada4.png" />
   </ItemGroup>
   <ItemGroup>
@@ -522,6 +501,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Espada9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Espada10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Espada11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Espada3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huelasRigth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huelasUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huelasDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huelasLeft.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
