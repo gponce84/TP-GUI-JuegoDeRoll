@@ -263,16 +263,6 @@ namespace Parcial_2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dungeon {
-            get {
-                object obj = ResourceManager.GetObject("dungeon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Enemy1_ataque1 {
             get {
                 object obj = ResourceManager.GetObject("Enemy1_ataque1", resourceCulture);
@@ -633,16 +623,6 @@ namespace Parcial_2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gate {
-            get {
-                object obj = ResourceManager.GetObject("gate", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Hechi {
             get {
                 object obj = ResourceManager.GetObject("Hechi", resourceCulture);
@@ -826,16 +806,6 @@ namespace Parcial_2.Properties {
         internal static System.Drawing.Bitmap pngocean_com_id_cgboe {
             get {
                 object obj = ResourceManager.GetObject("pngocean.com-id-cgboe", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Snowy {
-            get {
-                object obj = ResourceManager.GetObject("Snowy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
